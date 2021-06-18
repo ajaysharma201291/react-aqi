@@ -26,7 +26,7 @@ class App extends Component {
      * This function establishes the connect with the websocket and also ensures constant reconnection if connection closes
      */
   connect = () => {
-    let ws = new WebSocket("ws://city-ws.herokuapp.com/");
+    let ws = new WebSocket("wss://city-ws.herokuapp.com/");
     let that = this;// cache the this
     let connectInterval;
  
@@ -66,7 +66,7 @@ class App extends Component {
   check = () => {
     const { ws } = this.state;
     //check if websocket instance is closed, if so call `connect` function.
-    if (!ws || ws.readyState == WebSocket.CLOSED) {
+    if (!ws || ws.readyState === WebSocket.CLOSED) {
       this.connect();
     }
   }

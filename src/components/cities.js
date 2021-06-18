@@ -9,7 +9,7 @@ const Cities = (props) => {
         let className = 'unknown';
         let impact = 'unknown';
  
-        if (aqi == '') {
+        if (aqi === '') {
             impact = 'Unknown(No Results Found)';
             className = 'Unknown';
         } else if (aqi >= 0 && aqi <= 50) {
@@ -40,6 +40,7 @@ const Cities = (props) => {
     };
  
     return (<React.Fragment>
+        <div style={{ fontSize: '2em' }}>Click on any city to get that city latest 10 Record(s) on chart</div>
         <table>
             <thead>
                 <tr>

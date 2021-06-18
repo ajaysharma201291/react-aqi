@@ -7,7 +7,7 @@ const City = (props) => {
  
     useEffect(() => {
         props.selectedCityData.map((data) => {
-            data.aqi = parseInt(data.aqi.toFixed(0));
+            data.aqi = parseInt(data.aqi.toFixed(0),10);
         })
         const lineGraphData = {
             labels: props.selectedCityData.map(d => new Date(d.updated).toLocaleString()),
